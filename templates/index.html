@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Flask App</title>
+    <title>To-Do List</title>
 </head>
 <body>
-    <h1>Welcome to the Basic Flask App!</h1>
-    <p>This is a simple Flask application.</p>
+    <h1>To-Do List</h1>
+    <form action="/add" method="post">
+        <input type="text" name="task" placeholder="Enter a new task" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task }}
+            <a href="/edit/{{ loop.index0 }}">Edit</a>
+            <a href="/delete/{{ loop.index0 }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

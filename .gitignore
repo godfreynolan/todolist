@@ -1,0 +1,8 @@
+# Ignore Python virtual environment
+myenv/
+
+# Other common ignores
+__pycache__/
+*.pyc
+*.pyo
+*.log
